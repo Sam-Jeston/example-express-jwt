@@ -17,7 +17,7 @@ function generateJwt() {
 }
 
 app.use(jwt({
-  secret: 'currentFakeSecret'
+  secret: secret
 }).unless({ path: [/^\/login/] }))
 
 app.post('/login', function(req, res) {
